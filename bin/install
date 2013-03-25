@@ -11,10 +11,13 @@ key_dir = File.dirname("#{config.auth_file}")
 
 commands = [
   "mkdir -p #{config.repos_path}",
+  "mkdir -p #{config.snippets_path}",
   "mkdir -p #{key_dir}",
   "touch #{config.auth_file}",
   "chmod -R ug+rwX,o-rwx #{config.repos_path}",
-  "find #{config.repos_path} -type d -print0 | xargs -0 chmod g+s"
+  "chmod -R ug+rwX,o-rwx #{config.snippets_path}",
+  "find #{config.repos_path} -type d -print0 | xargs -0 chmod g+s",
+  "find #{config.snippets_path} -type d -print0 | xargs -0 chmod g+s"
 ]
 
 commands.each do |cmd|

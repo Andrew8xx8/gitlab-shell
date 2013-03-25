@@ -11,6 +11,10 @@ class GitlabConfig
     @config['repos_path'] ||= "/home/git/repositories"
   end
 
+  def snippets_path
+    @config['snippets_path'] ||= "/home/git/snippets"
+  end
+
   def auth_file
     @config['auth_file'] ||= "/home/git/.ssh/authorized_keys"
   end
